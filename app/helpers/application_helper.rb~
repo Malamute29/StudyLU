@@ -1,0 +1,14 @@
+module ApplicationHelper
+  def title
+    base_title = "Study LU "
+     appender = ""
+    if @title.nil?
+      base_title
+     
+    else 
+      appender << basetitle
+      appender << " | "
+      appender << @title
+    end
+  end
+end
