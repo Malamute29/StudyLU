@@ -4,6 +4,7 @@
       <li><%= link_to "Home", '#' %></li>
       <li><%= link_to "Help", '#' %></li>
       <li><%= link_to "Sign in", '#' %></li>
+      <li><a href="http://www.lawrence.edu">Lawrence Home Page</a></li>
     </ul>
   </nav>
 </header>
