@@ -112,4 +112,8 @@ footer nav{
   float: none;
 }
 
+nav {
+  float: right;
+}
+
 
