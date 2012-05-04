@@ -5,18 +5,20 @@
   <%= @user.username %>
 </p>
 
-<p>
+<!--
+	<p>
   <b>User:</b>
   <%= @user.user_id %>
 </p>
+-->
 
 <p>
-  <b>F name:</b>
+  <b>First Name:</b>
   <%= @user.f_name %>
 </p>
 
 <p>
-  <b>L name:</b>
+  <b>Last Name:</b>
   <%= @user.l_name %>
 </p>
 
@@ -25,10 +27,12 @@
   <%= @user.email %>
 </p>
 
-<p>
+<!--
+	<p>
   <b>Is admin:</b>
   <%= @user.is_admin %>
 </p>
+-->
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
