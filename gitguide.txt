@@ -1,0 +1,19 @@
+GIT GUIDE
+
+
+
+BRANCHING
+
+$ git branch branchname
+$ git co branchname
+---MAKE CHANGES---
+$ git commit -a
+$ git co master
+$ git merge branchname
+
+
+PUSH
+
+$ git add filename
+$ git commit -m "message"
+$ git push
