@@ -31,13 +31,14 @@
     <%= f.label "Email:" %><br />
     <%= f.text_field :email %>
   </div>
-  <!-- 
-	***COMMENTED THIS OUT, SHOULD NOT BE EDITABLE***
+  <div class="field">
+    <%= f.label "Password:" %><br />
+    <%= f.password_field :password %>
+  </div>
 	<div class="field">
-    <%= f.label :is_admin %><br />
+    <%= f.label "Type false to continue" %><br />
     <%= f.number_field :is_admin %>
   </div> 
--->
   <div class="actions">
     <%= f.submit %>
   </div>

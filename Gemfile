@@ -9,7 +9,7 @@ gem 'sqlite3'
 
 group :development do
     gem 'rspec-rails', '2.9.0'
-  
+  	
 end
 
 group :test do
@@ -22,6 +22,7 @@ group :test do
 	gem 'ZenTest'
 	gem 'spork', '0.9.0'
 	gem 'factory_girl_rails', '3.2'   # May need v=>1.0
+	gem 'gravatar_image_tag', '1.1.2' # Book suggests v=.1.1.2
 end
 
 # Gems used only for assets and not required
