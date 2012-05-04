@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe User do
+ 
   
   before(:each) do
     @attr= { :username => "Example User", :email => "user@example.com"}
@@ -20,5 +21,17 @@ describe User do
     no_email_user = User.new(@attr.merge(:email => ""))
     no_email_user.should_not be_valid
   end
+  
+  describe "password encryption" do
+    before(:each) do
+      @user = User.create!(@attr)
+    end
+    
+    #might not be working
+    it "should have an encrypted password attribute" do
+      @user.should respond_to(:encrypted_password)
+    end
+  end
+  
 end 
 
