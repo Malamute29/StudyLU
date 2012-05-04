@@ -21,6 +21,7 @@ group :test do
 	gem 'autotest-growl'
 	gem 'ZenTest'
 	gem 'spork', '0.9.0'
+	gem 'factory_girl_rails', '3.2'   # May need v=>1.0
 end
 
 # Gems used only for assets and not required
