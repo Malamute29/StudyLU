@@ -12,29 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :username %><br />
+    <%= f.label "Username:" %><br />
     <%= f.text_field :username %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br />
+    <%= f.label "LUID:" %><br />
     <%= f.number_field :user_id %>
   </div>
   <div class="field">
-    <%= f.label :f_name %><br />
+    <%= f.label "First Name:" %><br />
     <%= f.text_field :f_name %>
   </div>
   <div class="field">
-    <%= f.label :l_name %><br />
+    <%= f.label "Last Name:" %><br />
     <%= f.text_field :l_name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label "Email:" %><br />
     <%= f.text_field :email %>
   </div>
-  <div class="field">
+  <!-- 
+	***COMMENTED THIS OUT, SHOULD NOT BE EDITABLE***
+	<div class="field">
     <%= f.label :is_admin %><br />
     <%= f.number_field :is_admin %>
-  </div>
+  </div> 
+-->
   <div class="actions">
     <%= f.submit %>
   </div>
