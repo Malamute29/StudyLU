@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  before_filter :authenticate,  :only =>  (:edit) #should contain :update too but was causing error
   def new
     @title = "Sign up"
   end
@@ -8,10 +9,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @users }
+    @title  = "All users"
     end
   end
 
@@ -21,10 +19,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @title = @user.username  # Should change to full name
 
-    respond_to do |format|                  # This is not in the book
-      format.html # show.html.erb           # This is not in the book
-      format.json { render json: @user }    # This is not in the book
-    end
+    
   end
 
   # GET /users/new
@@ -69,15 +64,12 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
-
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.update_attributes(params(:user))
+      @title = "Profile updated!"
+      redirect_to @user
+    else
+      @title  = "Edit user"
+      render  'edit'
     end
   end
 
@@ -93,5 +85,16 @@ class UsersController < ApplicationController
     end
   end
 
- 
+private
+def authenticate
+  deny_access unless signed_in?
 end
+
+def correct_user
+  @user = User.find(params(:id))
+  redirect_to(root_path)  unless current_user?(@user)
+end
+    
+
+ 
+
